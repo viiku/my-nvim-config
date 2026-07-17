@@ -2,8 +2,8 @@
 
 return {
 	{
-		"conform.nvim",
 		"stevearc/conform.nvim",
+		name = "conform.nvim",
 		event = { "BufReadPre", "BufNewFile" },
 		config = function()
 			require("conform").setup({

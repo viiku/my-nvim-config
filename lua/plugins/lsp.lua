@@ -2,7 +2,6 @@
 
 return {
 	{
-		"nvim-lspconfig",
 		"neovim/nvim-lspconfig",
 		event = { "BufReadPre", "BufNewFile" },
 		dependencies = { "nvim-cmp" },
@@ -39,8 +38,8 @@ return {
 	},
 
 	{
-		"mason.nvim",
 		"williamboman/mason.nvim",
+		name = "mason.nvim",
 		build = ":MasonUpdate",
 		cmd = "Mason",
 		config = function()
@@ -50,8 +49,8 @@ return {
 	},
 
 	{
-		"mason-lspconfig.nvim",
 		"williamboman/mason-lspconfig.nvim",
+		name = "mason-lspconfig.nvim",
 		dependencies = { "mason.nvim", "nvim-lspconfig" },
 		config = function()
 			require("mason-lspconfig").setup({ automatic_installation = true })

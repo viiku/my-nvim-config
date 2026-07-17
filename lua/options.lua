@@ -14,7 +14,7 @@ o.autoindent = true
 -- Search
 o.ignorecase = true
 o.smartcase = true
-o.hlssearch = true
+o.hlsearch = true
 o.incsearch = true
 
 --  Appearance

@@ -2,14 +2,12 @@
 
 return {
 	{
-		"nvim-cmp",
 		"hrsh7th/nvim-cmp",
 		event = "InsertEnter",
 		dependencies = {
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-path",
-			"hrsh7th/cmp-cmdline",
 			"L3MON4D3/LuaSnip",
 			"saadparwaiz1/cmp_luasnip",
 		},
@@ -56,28 +54,18 @@ return {
 					{ name = "path" },
 				}),
 			})
-
-			-- Command mode completion
-			cmp.setup.cmdline(":", {
-				mapping = cmp.mapping.preset.cmdline(),
-				sources = cmp.config.sources({
-					{ name = "path" },
-				}, {
-					{ name = "cmdline" },
-				}),
-			})
 		end,
 		desc = "Completion engine",
 	},
 
 	{
-		"LuaSnip",
 		"L3MON4D3/LuaSnip",
-		build = "make install_jsregexp",
-		dependencies = { "rafamadriz/friendly-snippets" },
-		config = function()
-			require("luasnip.loaders.from_vscode").lazy_load()
-		end,
 		desc = "Snippet engine",
+	},
+
+	{
+		"saadparwaiz1/cmp_luasnip",
+		name = "cmp_luasnip",
+		desc = "LuaSnip source for nvim-cmp",
 	},
 }

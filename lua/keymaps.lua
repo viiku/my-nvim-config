@@ -151,10 +151,6 @@ map("n", "<leader>fc", "<cmd>Telescope commands<cr>",    { desc = "Commands" })
 map("n", "<leader>fd", "<cmd>Telescope diagnostics<cr>", { desc = "Diagnostics" })
 map("n", "<leader>fw", "<cmd>Telescope grep_string<cr>", { desc = "Grep word" })
 
--- File tree
-map("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", { desc = "Toggle file tree" })
-map("n", "<leader>E", "<cmd>NvimTreeFocus<cr>",  { desc = "Focus file tree" })
-
 -- ============================================================================
 -- GIT KEYMAPS (Neogit / Diffview)
 -- ============================================================================

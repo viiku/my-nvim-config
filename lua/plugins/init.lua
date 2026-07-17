@@ -12,7 +12,6 @@ local categories = {
 	"treesitter",
 	"formatting",
 	"git",
-	"dap",
 	"utils",
 }
 
