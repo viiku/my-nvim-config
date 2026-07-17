@@ -76,33 +76,11 @@ vim.api.nvim_create_autocmd({ "WinEnter", "BufWinEnter" }, {
 	end,
 })
 
--- Helper functions for terminal
-local function term_dir()
-	local function dir_of(buf)
-		if vim.bo[buf].buftype ~= "" then return nil end
-		local name = vim.api.nvim_buf_get_name(buf)
-		if name == "" then return nil end
-		local d = vim.fn.fnamemodify(name, ":h")
-		return (vim.fn.isdirectory(d) == 1) and d or nil
-	end
-	local d = dir_of(vim.api.nvim_win_get_buf(vim.api.nvim_get_current_win()))
-	if d then return d end
-	for _, w in ipairs(vim.api.nvim_tabpage_list_wins(0)) do
-		d = dir_of(vim.api.nvim_win_get_buf(w))
-		if d then return d end
-	end
-	return vim.fn.getcwd()
-end
+-- Terminal helpers (shared with core.runner)
+local utils = require("core.utils")
 
-local function open_term(dir)
-	vim.cmd("belowright 15new")
-	vim.cmd("lcd " .. vim.fn.fnameescape(dir))
-	vim.cmd("terminal")
-	vim.cmd("startinsert")
-end
-
-map("n", "<leader>st", function() open_term(term_dir()) end,      { desc = "Terminal in file dir" })
-map("n", "<leader>sT", function() open_term(vim.fn.getcwd()) end, { desc = "Terminal in cwd" })
+map("n", "<leader>st", function() utils.open_term(utils.term_dir()) end, { desc = "Terminal in file dir" })
+map("n", "<leader>sT", function() utils.open_term(vim.fn.getcwd()) end,  { desc = "Terminal in cwd" })
 
 -- ============================================================================
 -- SEARCH & NAVIGATION

@@ -19,4 +19,4 @@ require("keymaps")
 
 require("lazy").setup(require("plugins"))
 
-require("runner")
+require("core.runner")
