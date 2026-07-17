@@ -9,7 +9,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require(options)
-reuqire(keymaps)
-require(plugins)
-require(runner)   -- build/run keymaps per language (<leader>rr / rb / rt)
+require("options")
+require("keymaps")
+require("plugins")
+require("runner")   -- build/run keymaps per language (<leader>rr / rb / rt)
