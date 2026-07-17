@@ -153,7 +153,7 @@ map("n", "<C-x>", "<C-x>", { desc = "Decrement number" })
 
 -- Format entire file
 map("n", "<leader>fm", function()
-	vim.lsp.buf.format()
+    vim.lsp.buf.format({ async = true })
 end, { desc = "Format file" })
 
 map("v", "<leader>fm", function()

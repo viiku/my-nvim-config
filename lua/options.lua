@@ -27,7 +27,7 @@ o.signcolumn = "yes"
 o.wrap = false
 o.scrolloff = 8
 o.sidescrolloff = 8
-o.colorcoulmn = "100"
+o.colorcolumn = "100"
 
 -- Splits
 o.splitright = true
