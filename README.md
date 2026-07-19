@@ -1,6 +1,6 @@
 # MY NEOVIM CONFIG
 
-# Quick Start
+## Quick Start
 1. Clone this repo
 ```
     git clone https://github.com/viiku/nvim-config.git
@@ -15,3 +15,6 @@
 ```
     nvim
 ```
+
+## Keymapping
+

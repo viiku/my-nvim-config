@@ -181,3 +181,9 @@ map("v", "L", "$", { desc = "Go to line end" })
 
 -- Show keymaps
 map("n", "<leader>?", "<cmd>Telescope keymaps<cr>", { desc = "Show keymaps" })
+
+-- Browser toggle
+map("n", "<leader>e", "<cmd>Explore<cr>", { desc = "Open file explorer (netrw)" })
+map("n", "<C-^>", "<C-^>", { desc = "Toggle previous buffer" })
+
+
