@@ -53,8 +53,11 @@ return {
 		lazy = false,
 		priority = 1000,
 		config = function()
-			require("catppuccin").setup({ flavour = "mocha" })
-			vim.cmd.colorscheme("catppuccin-mocha")
+			require("catppuccin").setup({
+				flavour = "mocha",
+				transparent_background = false,
+			})
+			vim.cmd.colorscheme("catppuccin")
 		end,
 		desc = "Catppuccin color scheme",
 	},

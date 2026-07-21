@@ -50,10 +50,8 @@ map("n", "<leader>sx", "<C-w>x",          { desc = "Swap with next split" })
 
 map("n", "<leader>tn", "<cmd>tabnew<cr>",      { desc = "New tab" })
 map("n", "<leader>tc", "<cmd>tabclose<cr>",    { desc = "Close tab" })
-map("n", "<leader>t>", "<cmd>tabnext<cr>",     { desc = "Next tab" })
-map("n", "<leader>t<", "<cmd>tabprevious<cr>", { desc = "Previous tab" })
-map("n", "<leader>tmp", "<cmd>tabmove +1<cr>", { desc = "Move tab forward" })
-map("n", "<leader>tmn", "<cmd>tabmove -1<cr>", { desc = "Move tab backward" })
+map("n", "<leader>tl>", "<cmd>tabnext<cr>",     { desc = "Next tab" })
+map("n", "<leader>th<", "<cmd>tabprevious<cr>", { desc = "Previous tab" })
 
 -- ============================================================================
 -- TERMINAL
@@ -155,11 +153,14 @@ map("n", "<leader>fw", "<cmd>Telescope grep_string<cr>", { desc = "Grep word" })
 -- GIT KEYMAPS (Neogit / Diffview)
 -- ============================================================================
 
-map("n", "<leader>gg", "<cmd>Neogit<cr>",                { desc = "Git status (Neogit)" })
-map("n", "<leader>gd", "<cmd>DiffviewOpen<cr>",          { desc = "Diff view" })
-map("n", "<leader>gh", "<cmd>DiffviewFileHistory %<cr>", { desc = "File history" })
-map("n", "<leader>gc", "<cmd>DiffviewClose<cr>",         { desc = "Close diff view" })
-
+map("n", "<leader>gg", "<cmd>Neogit<cr>",                      { desc = "Git status (Neogit)" })
+map("n", "<leader>gd", "<cmd>DiffviewOpen<cr>",         	   { desc = "Diff view" })
+map("n", "<leader>gD", "<cmd>DiffviewOpen Head~1<cr>",         { desc = "Diff view (last commit)" })
+map("n", "<leader>gh", "<cmd>DiffviewFileHistory %<cr>",       { desc = "File history (current file)" })
+map("n", "<leader>gH", "<cmd>DiffviewFileHistory<cr>",         { desc = "File history (all files)" })
+map("n", "<leader>gx", "<cmd>DiffviewClose<cr>",               { desc = "Close diff view" })
+map("n", "<leader>gR", "<cmd>DiffviewRefresh<cr>",             { desc = "Refresh diff view" })
+map("n", "<leader>ga", "<cmd>!git add -A<cr>",                 { desc = "Stage all changes(git add .)" })
 -- ============================================================================
 -- MISCELLANEOUS
 -- ============================================================================
@@ -182,8 +183,8 @@ map("v", "L", "$", { desc = "Go to line end" })
 -- Show keymaps
 map("n", "<leader>?", "<cmd>Telescope keymaps<cr>", { desc = "Show keymaps" })
 
+-- File Explorer
+map("n", "<leader>e", "<cmd>Explore<cr>",        { desc = "Open file explorer" })
+map("n", "<leader>E", "<cmd>NvimTreeToggle<cr>", { desc = "Toggle file tree (NvimTree)" })
+
 -- Browser toggle
-map("n", "<leader>e", "<cmd>Explore<cr>", { desc = "Open file explorer (netrw)" })
-map("n", "<C-^>", "<C-^>", { desc = "Toggle previous buffer" })
-
-
